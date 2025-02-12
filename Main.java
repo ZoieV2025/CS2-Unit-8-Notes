@@ -5,7 +5,7 @@ public class Main {
       int[][] coordinates;
       // CREATE 2D Array of a certain number
       // of ROWS and COLUMNS
-      coordinates = new int[5][5]
+      coordinates = new int[5][5];
       // Default values for int: 0
    
       // INITIALIZE (Declare + Create)
@@ -19,10 +19,22 @@ public class Main {
       seatingChart[2][0] = "Bryce";
       seatingChart[2][1] = "Natalie";
       seatingChart[2][2] = "Paige";
-      seatingChart[2[3] = "Zoie";
+      seatingChart[2][3] = "Zoie";
       seatingChart[1][3] = "Alex";
       seatingChart[0][3] = "Maia";
 
+      // INITIALIZER LIST
+      // alternate way to intiialzie array
+      // (when you know what values go where)
+      // INNER curly brackets hold each row
+      int[][] minefield = {{7,-20,0}, {0,50,-15}, {-10,12,20}};
+
+      // ACCESS a vlaue with the double index operator
+      // array[row][col]
+      System.out.println("You earned " + minefield[2][0] + " points");
+      System.out.println("You earned " + minefield[1][1] + " points");
+      // Can also store value in a new variable
+      int worstSpot = minefield[0][1];
 
    }
 }
