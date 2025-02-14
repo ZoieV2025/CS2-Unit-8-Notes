@@ -36,5 +36,65 @@ public class Main {
       // Can also store value in a new variable
       int worstSpot = minefield[0][1];
 
+      // NESTED Loops are necessary to traverse 2D arrays
+      // ENHANCED FOR-EACH LOOP to "visit" all items in order
+      // OUTER loop iterates through each row
+      // IMPORANT: Data type of a ROW is a 1D Array
+      for (String[] row : seatingChart) {
+         // INNER loop iterates through column values
+         // "for every string item in the row array"
+         for(String col : row) {
+            System.out.println(col + " ");
+         }
+         System.out.println(); // line break between rows
+      }
+
+      // Cannot use for-each if you want to MODIFY VALUES
+      // or iterate in a different order
+      // STANDARD ("indexed") FOR LOOP
+      // array..length represents NUMBER OF ROWS in the 2D array
+      for(int row=0; row < minefield.length; row++) {
+         // array[0].lenth represents NUMBER OF COLUMBS in a row
+         for (int col=0; col < minefield[0].length; col++){
+            // if spot is a "bomb" (negative num), replace it
+            if (minefield[row][col] < 0) {
+               minefield[row][col] = minefield[row][col] * -1;
+            }
+            System.out.println("[" + minefield[row][col] + "]");
+         }
+         System.out.println();
+      }
+
+
+      // ASCII ART (use in your games for fun!)
+      // https://www.asciiart.eu/
+      // CHARs (characters) use 'single quotes'
+
+      char[][] asciiArt = {
+        //    {','},
+    //   {' ','-', '-',','/','/','-','-' },
+    //   {'' , '\' , ' ' , '/'' },
+      //   {'', '/', '-', '' , '-','\' },
+   //       {'', '\','/' },
+        //    {'''}
+
+        {',','d','8','8','b','.','d','8','8','b',','},
+        {'8','8','8','8','8','8','8','8','8','8','8'},
+        {' ','Y','8','8','8','8','8','8','8','Y',' '},
+        {' ',' ',' ','Y','8','8','8','Y',' ',' ',' '},
+        {' ',' ',' ',' ',' ','Y',' ',' ',' ',' ',' '}
+        
+         
+
+   };
+
+   for (char[] row : asciiArt){
+      for (char col : row) {
+         System.out.print(col);
+      }
+      System.out.println();
    }
+
 }
+}
+
